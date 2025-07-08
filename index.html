@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="header-title">Developer Tools Hub</h1>
+                    <div class="header-actions">
+                        <button class="theme-toggle btn btn--secondary" id="themeToggle">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Search Section -->
+                <section class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" id="searchInput" placeholder="Search tools...">
+                        <div class="search-icon">🔍</div>
+                    </div>
+                </section>
+
+                <!-- Tools Grid -->
+                <section class="tools-grid" id="toolsGrid">
+                    <!-- Tool cards will be populated by JavaScript -->
+                </section>
+            </div>
+        </main>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalTitle">Tool Name</h2>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Tool content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Prevent FOUC (Flash of Unstyled Content) for theme
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+          document.documentElement.setAttribute('data-color-scheme', theme);
+        }
+      })();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
